@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="defaultPersistenceUnit" transaction-type="JTA">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>jdbc/oralocalxa</jta-data-source>
+        <class>com.epam.training.persistence.pojo.BidsEntity</class>
+        <class>com.epam.training.persistence.pojo.UserEntity</class>
+        <class>com.epam.training.persistence.pojo.ItemsEntity</class>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class, hbm"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="validate"/>
+            <property name="javax.persistence.validation.mode" value="NONE" />
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.WebSphereExtendedJtaPlatform" />
+            <property name="hibernate.current_session_context_class" value="jta"/>
+            <property name="hibernate.transaction.flush_before_completion" value="true"/>
+            <property name="hibernate.connection.release_mode" value="auto"/>
+            <property name="hibernate.connection.url" value="jdbc:oracle:thin:@//localhost:1521/TESTDB"/>
+            <property name="hibernate.connection.driver_class" value="oracle.jdbc.OracleDriver"/>
+            <property name="hibernate.connection.username" value="OMPTEST"/>
+            <property name="hibernate.connection.password" value="test"/>
+        </properties>
+    </persistence-unit>
+</persistence>
